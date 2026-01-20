@@ -13,6 +13,8 @@
             background-color: #f4e8d1; /* Base parchment color */
             color: #4a2c2a;
             background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+            margin: 0;
+            padding: 0;
         }
         h1, h2, h3, .serif {
             font-family: 'Playfair Display', serif;
@@ -40,6 +42,16 @@
         }
         .hero-gradient {
             background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3), rgba(244, 232, 209, 0.2));
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #d4d4d8;
+          border-radius: 10px;
         }
     </style>
 <script type="importmap">
