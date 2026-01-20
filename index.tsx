@@ -3,15 +3,19 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 
-const container = document.getElementById('root');
+const startApp = () => {
+  const container = document.getElementById('root');
+  if (container) {
+    const root = createRoot(container);
+    root.render(
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    );
+  } else {
+    // If element is not found immediately, retry once
+    setTimeout(startApp, 100);
+  }
+};
 
-if (container) {
-  const root = createRoot(container);
-  root.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
-} else {
-  console.error("Root element not found! Make sure <div id='root'></div> exists in index.html");
-}
+startApp();
